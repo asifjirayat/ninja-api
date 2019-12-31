@@ -15,6 +15,8 @@ mongoose.connect(MONGO_URI, {useUnifiedTopology: true, useNewUrlParser: true, us
 });
 mongoose.Promise = global.Promise;
 
+app.use(express.static('public'));
+
 app.use(bodyParser.json());
 
 app.use('/api', routes);
